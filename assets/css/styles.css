@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
+
+:root {
+  --color-background-white: #FAFAFA;
+  --color-page-white: #EEEEEE;
+  --color-dark-gray: #333;
+  --color-selection-text: #FFF;
+  --color-selection-background: #012169;
+  --color-black-shadow-alpha: rgba(0, 0, 0, .5);
+  --font-title: 'EB Garamond', serif;
+  --font-paragraph: 'Raleway', sans-serif;
+  --container-size: 100%;
+  --container-h-padding: 1rem;
+}
+
+::-moz-selection, ::selection {
+  color: var(--color-selection-text);
+  background-color: var(--color-selection-background);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  background-color: var(--color-background-white);
+  color: var(--color-dark-gray);
+  min-height: 100vh;
+}
+
+.line {
+  --shadow-size: 0.625rem;
+  border: 0;
+  box-shadow: 0 var(--shadow-size) var(--shadow-size) calc(var(--shadow-size)*-1) var(--color-black-shadow-alpha) inset;
+  height: var(--shadow-size);
+  margin: 1.5rem 0;
+}
+
+.title {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: capitalize;
+  padding-bottom: 1.5rem;
+}
+
+.text {
+  font-family: var(--font-paragraph);
+  font-size: 1rem;
+}
+
+.caption {
+  font-size: .9rem;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.center {
+  text-align: center;
+}
+
+.menu__list {
+  display: flex;
+  gap: .5rem 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 2rem var(--container-h-padding);
+  width: var(--container-size);
+}
+
+.menu__item {
+  list-style-type: none;
+}
+
+.menu__link {
+  color: var(--color-dark-gray);
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu__link:hover {
+  opacity: .8;
+}
+
+.container {
+  max-width: 56.25rem;
+  width: var(--container-size);
+}
+
+.sheet {
+  background-color: var(--color-page-white);
+  box-shadow: 0 0 1.5625rem var(--color-black-shadow-alpha);
+  padding: var(--container-h-padding)
+}
+
+.presentation__image {
+  width: 100%;
+  margin-bottom: .5rem;
+}
+
+.history__text {
+  margin-bottom: 1.5rem;
+}
+
+.history__quote {
+  font-size: .95rem;
+  margin-bottom: 3rem;
+}
+
+.history__quote::before {
+  content: open-quote;
+}
+
+.history__quote::after {
+  content: close-quote;
+}
+
+.history__image {
+  display: block;
+  margin: 0 auto;
+  min-width: 12.5rem;
+  width: 50%;
+}
+
+.features__feature {
+  margin-bottom: 1.5rem;
+}
+
+.features__image {
+  --feature-img-size: 6.25rem;
+  border-left: 3px solid var(--color-dark-gray);
+  float: left;
+  height: var(--feature-img-size);
+  margin: 0 .5rem .5rem 0;
+  object-fit: cover;
+  width: var(--feature-img-size);
+}
+
+.interviews__interview {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.interviews__text {
+  margin-top: .5rem;
+}
+
+.interviews__video {
+  height: 15.625rem;
+  width: 100%;
+}
+
+.references__list {
+  column-width: 20rem;
+  list-style-position: inside;
+}
+
+.references__link {
+  color: var(--color-dark-gray);
+  display: inline-block;
+  text-decoration: none;
+  padding: .1rem;
+}
+
+.references__link:hover {
+  opacity: .75;
+}
+
+.footer {
+  padding: 2rem 0;
+}
+
+.footer__text {
+  font-size: .8rem;
+}
+
+.footer__link {
+  color: var(--color-dark-gray);
+}
+
+@media screen and (min-width: 36rem) {
+  :root {
+    --container-size: 90%;
+    --container-h-padding: 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .sheet {
+    margin: 2rem auto;
+  }
+
+  .interviews__video {
+    height: 21.875rem;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  :root {
+    --container-size: 80%;
+  }
+
+  .history__quote {
+    padding-left: 60%;
+  }
+}
+
+@media screen and (min-width: 62rem) {
+  .presentation__image {
+    width: 80%;
+  }
+
+  .features__feature {
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .features__image {
+    --feature-img-size: 9.375rem;
+    border-left-width: 0.3125rem;
+    float: none;
+    margin: 0;
+  }
+
+  .interviews__interview {
+    margin: 0 auto 2rem;
+    width: 80%;
+  }
+}
